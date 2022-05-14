@@ -1,7 +1,7 @@
 
 let data = localStorage.getItem("data");
 if (data == null){
-    window.location.href = "../login/login.html"
+    window.location.href = "../../login/login.html"
 }
 else {
     let obj = JSON.parse(data);
