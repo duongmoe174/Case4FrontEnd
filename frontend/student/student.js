@@ -73,7 +73,7 @@ function showClass(){
         type:"GET",
         url:"http://localhost:8080/admin/classes",
         success: function (classes){
-            let content = `<option disabled>Choose...</option>`;
+            let content = `<option disabled>...Choose...</option>`;
             for (let i = 0; i < classes.length; i++) {
                 content +=`<option value="${classes[i].id}">${classes[i].name}</option>`
             }
@@ -89,7 +89,7 @@ function showGender(){
         type:"GET",
         url:"http://localhost:8080/students/genders",
         success: function (genders){
-            let content = `<option disabled>Choose...</option>`;
+            let content = `<option disabled>...Choose...</option>`;
             for (let i = 0; i < genders.length; i++) {
                 content +=`<option value="${genders[i].id}">${genders[i].name}</option>`
             }
