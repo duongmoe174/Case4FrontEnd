@@ -189,8 +189,31 @@
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Create User</h4>
+                    <button class="button-29" role="button" data-bs-toggle="modal" data-bs-target="#create_modal" onclick="showCreateForm()">Create class</button>
                 </div>
+                <!--CREATE MODAL-->
+                <div>
+                    <div class="modal fade" id="create_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Create product</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input class="form-control" id="createName"
+                                               type="text">
+                                    </div>
+                                </div>
+                                <div class="modal-footer" id="create_footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--END CREATE MODAL-->
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <div class="d-md-flex">
                         <ol class="breadcrumb ms-auto">
@@ -223,58 +246,15 @@
                             <table class="table text-nowrap">
                                 <thead>
                                 <tr>
-                                    <th class="border-top-0">#</th>
-                                    <th class="border-top-0">First Name</th>
-                                    <th class="border-top-0">Last Name</th>
-                                    <th class="border-top-0">Username</th>
-                                    <th class="border-top-0">Role</th>
+                                 <th>Id</th>
+                                 <th>Name class</th>
+                                 <th colspan="2">Action</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Deshmukh</td>
-                                    <td>Prohaska</td>
-                                    <td>@Genelia</td>
-                                    <td>admin</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Deshmukh</td>
-                                    <td>Gaylord</td>
-                                    <td>@Ritesh</td>
-                                    <td>member</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Sanghani</td>
-                                    <td>Gusikowski</td>
-                                    <td>@Govinda</td>
-                                    <td>developer</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Roshan</td>
-                                    <td>Rogahn</td>
-                                    <td>@Hritik</td>
-                                    <td>supporter</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Joshi</td>
-                                    <td>Hickle</td>
-                                    <td>@Maruti</td>
-                                    <td>member</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Nigam</td>
-                                    <td>Eichmann</td>
-                                    <td>@Sonu</td>
-                                    <td>supporter</td>
-                                </tr>
+                                <tbody id="listClass">
                                 </tbody>
                             </table>
+                            <div style="text-align: center" id="iconPage"></div>
                         </div>
                     </div>
                 </div>
@@ -316,7 +296,7 @@
 
 
 </body>
-<script src="admin.js"></script>
+<script src="jsFile/admin.js"></script>
 <script src="../../template/plugins/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="../../template/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -327,4 +307,5 @@
 <script src="../../template/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
 <script src="../../template/js/custom.js"></script>
+<script src="jsFile/class.js"></script>
 </html>
