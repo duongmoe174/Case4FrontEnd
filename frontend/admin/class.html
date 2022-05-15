@@ -189,15 +189,15 @@
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <button class="button-29" role="button" data-bs-toggle="modal" data-bs-target="#create_modal" onclick="showCreateForm()">Create class</button>
+                    <button class="button-29" role="button" data-bs-toggle="modal" data-bs-target="#create_modalClass" onclick="showCreateForm()">Create class</button>
                 </div>
                 <!--CREATE MODAL-->
                 <div>
-                    <div class="modal fade" id="create_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="create_modalClass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Create product</h5>
+                                    <h5 class="modal-title">Create class</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -214,14 +214,34 @@
                     </div>
                 </div>
                 <!--END CREATE MODAL-->
+                <!--START EDIT MODAL-->
+                <div>
+                    <div class="modal fade" id="edit_modalClass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit class</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input class="form-control" id="editName"
+                                               type="text">
+                                    </div>
+                                </div>
+                                <div class="modal-footer" id="edit_footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--END EDIT MODAL-->
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <div class="d-md-flex">
                         <ol class="breadcrumb ms-auto">
                             <li><a href="#" class="fw-normal">Dashboard</a></li>
                         </ol>
-                        <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank"
-                           class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Upgrade
-                            to Pro</a>
                     </div>
                 </div>
             </div>
@@ -240,8 +260,7 @@
             <div class="row">
                 <div class="col-md-12" style="text-align: center">
                     <div class="white-box">
-                        <h3 class="box-title">Basic Table</h3>
-                        <p class="text-muted">Add class <code>.table</code></p>
+                        <h3 class="box-title">Classes list</h3>
                         <div class="table-responsive">
                             <table class="table text-nowrap">
                                 <thead>
