@@ -135,7 +135,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="teachers.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="hide-menu">Teacher management</span>
@@ -189,22 +189,95 @@
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <button class="button-29" role="button" data-bs-toggle="modal" data-bs-target="#create_modalClass" onclick="showCreateForm()">Create class</button>
+                    <button class="button-29" role="button" data-bs-toggle="modal" data-bs-target="#create_modalTeacher" onclick="showCreateForm()">Create teacher</button>
                 </div>
                 <!--CREATE MODAL-->
                 <div>
-                    <div class="modal fade" id="create_modalClass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="create_modalTeacher" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Create class</h5>
+                                    <h5 class="modal-title">Create teacher</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="form-group">
-                                        <label>Name</label>
-                                        <input class="form-control" id="createName"
-                                               type="text">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Username</label>
+                                            <input class="form-control" id="createUsernameTC"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input class="form-control" id="createPasswordTC"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Role Set</label>
+                                            <select class="form-select" id="createRoleSetTC">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Full name</label>
+                                            <input class="form-control" id="createFullNameTC"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input class="form-control" id="createPhoneNumberTC"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Avatar</label>
+                                            <input class="form-control" id="createAvatarTC"
+                                                   type="file">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" id="createEmailTC"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                            <select class="form-select" id="createGenderTC">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Date of birth</label>
+                                            <input class="form-control" id="createDateOfBirthTC"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input class="form-control" id="createAddressTC"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Class</label>
+                                            <select class="form-select" id="createClassTC" multiple style="height: 100px">
+
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer" id="create_footer">
@@ -216,21 +289,93 @@
                 <!--END CREATE MODAL-->
                 <!--START EDIT MODAL-->
                 <div>
-                    <div class="modal fade" id="edit_modalClass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="edit_modalTeacher" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Edit class</h5>
+                                    <h5 class="modal-title">Edit Teacher</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label>Name</label>
-                                        <input class="form-control" id="editName"
+                                        <label>Username</label>
+                                        <input class="form-control" id="editUsernameTC"
                                                type="text">
                                     </div>
                                 </div>
-                                <div class="modal-footer" id="edit_footer">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input class="form-control" id="editPasswordTC"
+                                               type="password">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Role Set</label>
+                                        <select class="form-select" id="editRoleSetTC">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Full name</label>
+                                        <input class="form-control" id="editFullNameTC"
+                                               type="text">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input class="form-control" id="editPhoneNumberTC"
+                                               type="text">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Avatar</label>
+                                        <p id="showImgTC"></p>
+                                        <input class="form-control" id="editAvatarTC"
+                                               type="file">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input class="form-control" id="editEmailTC"
+                                               type="email">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Gender</label>
+                                        <select class="form-select" id="editGenderTC">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Date of birth</label>
+                                        <input class="form-control" id="editDateOfBirthTC"
+                                               type="text">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input class="form-control" id="editAddressTC"
+                                               type="text">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Class</label>
+                                        <select class="form-select" id="editClassTC" multiple style="height: 100px">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer" id="edit_footerTeacher">
                                 </div>
                             </div>
                         </div>
@@ -260,20 +405,25 @@
             <div class="row">
                 <div class="col-md-12" style="text-align: center">
                     <div class="white-box">
-                        <h3 class="box-title">Classes list</h3>
+                        <h3 class="box-title">Teacher list</h3>
                         <div class="table-responsive">
                             <table class="table text-nowrap">
                                 <thead>
                                 <tr>
-                                 <th>Id</th>
-                                 <th>Name class</th>
-                                 <th colspan="2">Action</th>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Avatar</th>
+                                    <th>Email</th>
+                                    <th>Gender</th>
+                                    <th>Address</th>
+                                    <th colspan="2">Action</th>
                                 </tr>
                                 </thead>
-                                <tbody id="listClass">
+                                <tbody id="listTeacher">
                                 </tbody>
                             </table>
-                            <div style="text-align: center" id="iconPage"></div>
+                            <div style="text-align: center" id="iconPageTeacher"></div>
                         </div>
                     </div>
                 </div>
@@ -326,5 +476,5 @@
 <script src="../../template/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
 <script src="../../template/js/custom.js"></script>
-<script src="jsFile/class.js"></script>
+<script src="jsFile/teachers.js"></script>
 </html>
