@@ -200,7 +200,7 @@ function updateMinistry(id){
         enctype: 'multipart/from-data',
         processData: false,
         contentType: false,
-        data: studentForm,
+        data: ministryForm,
         url:`http://localhost:8080/ministry/ministries/edit/${id}`,
         success:function (){
             showListMinistry()
