@@ -1,7 +1,7 @@
 function showRoleStudent(page){
     $.ajax({
         type:"GET",
-        url:`http://localhost:8080/students?page=${page}`,
+        url:`http://localhost:8080/students/list?page=${page}`,
         success: function (data){
             let student = data.content;
             let content = '';
@@ -84,12 +84,12 @@ function showProfile(id){
     $.ajax({
         type:"GET",
         url:`http://localhost:8080/students/roleStudent/${id}`,
-        success:function (student){
-            $('#fullName').val(student.name)
-            $('#point1').val(student)
-            $('#point2').val(student)
-            $('#tuition').val(student)
-            $('#statusStudent').val(student)
+        success:function (students){
+            $('#fullName').val(students)
+            $('#point1').val(students)
+            $('#point2').val(students)
+            $('#tuition').val(students)
+            $('#statusStudent').val(students)
         }
     })
 }

@@ -1,7 +1,7 @@
 function showListStudent(page){
     $.ajax({
         type:"GET",
-        url:`http://localhost:8080/students?page=${page}`,
+        url:`http://localhost:8080/students/list?page=${page}`,
         success: function (data){
             let student = data.content;
             let content = '';
@@ -73,7 +73,7 @@ function deleteStudent(id) {
 function showClass(){
     $.ajax({
         type:"GET",
-        url:"http://localhost:8080/admin/classes",
+        url:"http://localhost:8080/students/classes",
         success: function (classes){
             let content = `<option disabled>...Choose...</option>`;
             for (let i = 0; i < classes.length; i++) {
@@ -162,7 +162,7 @@ function createStudent(){
         enctype: 'multipart/form-data',
         processData: false,
         contentType: false,
-        url: "http://localhost:8080/students",
+        url: "http://localhost:8080/students/create",
         data: studentForms,
         success: function (){
             showListStudent()
