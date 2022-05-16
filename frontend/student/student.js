@@ -16,9 +16,10 @@ function showListStudent(page){
         <td>${student[i].gender.name}</td>
         <td>${student[i].dateOfBirth}</td>
         <td>${student[i].address}</td>
-        <td>${student[i].classes.name}</td>
+        <td>${student[i].classes.name}</td>       
         <td>${student[i].tuition.name}</td>
         <td>${student[i].statusStudent.name}</td>
+        
         <td><button type="button" class="btn btn-outline-danger" onclick="deleteStudent(${student[i].id})">Delete</button></td>
         <td><button type="button" class="btn btn-outline-primary" onclick="showEditFormStudent(${student[i].id})" data-bs-toggle="modal" data-bs-target="#myModal1">Update</button></td>
         </tr>`
@@ -26,11 +27,11 @@ function showListStudent(page){
 
             $("#list-student").html(content);
 
-            let iconPage =  `<button id="first" onclick="showListStudent(0)"><i class="fa-solid fa-backward-fast">First</i></button> 
-                <button  id="backup" onclick="showListStudent(${data.pageable.pageNumber} - 1)"><i class ="fa-solid fa-backward-step">Back</i></button>
-                      <span> Trang </span> <span>${data.pageable.pageNumber +1 }/ ${data.totalPages}</span>
-                      <button id="next" onclick="showListStudent(${data.pageable.pageNumber}+1)" ><i class="fa-solid fa-forward-step">Next</i></button>
-                        <button id="last" onclick="showListStudent(${data.totalPages} -1)"><i class="fa-solid fa-forward-fast">Last</i></button>`
+            let iconPage =  `<button id="first" onclick="showListStudent(0)"><i class="fa-solid fa-backward-fast"><span aria-hidden="true">&laquo;</span></i></button> 
+                <button  id="backup" onclick="showListStudent(${data.pageable.pageNumber} - 1)"><i class ="fa-solid fa-backward-step">Previous</i></button>
+                <span> Trang </span> <span>${data.pageable.pageNumber +1 }/ ${data.totalPages}</span>
+                <button id="next" onclick="showListStudent(${data.pageable.pageNumber}+1)" ><i class="fa-solid fa-forward-step">Next</i></button>
+                <button id="last" onclick="showListStudent(${data.totalPages} -1)"><i class="fa-solid fa-forward-fast"><span aria-hidden="true">&raquo;</span></i></button>`
             $(`#iconPage`).html(iconPage);
             if (data.pageable.pageNumber === 0) {
                 document.getElementById("backup").hidden = true
@@ -65,6 +66,7 @@ function deleteStudent(id) {
         }
     })
 }
+
 
 //CREATE STUDENT..................................................
 
@@ -194,17 +196,17 @@ function findByName(page){
         <td>${students[i].classes.name}</td>
         <td>${students[i].tuition.name}</td>
         <td>${students[i].statusStudent.name}</td>
-        <td><button onclick="deleteStudent(${students[i].id})">Delete</button></td>
-        <td><button type="button" onclick="showEditFormStudent(${students[i].id})" data-bs-toggle="modal" data-bs-target="#myModal1">Update</button></td>
+        <td><button type="button" class="btn btn-outline-danger" onclick="deleteStudent(${students[i].id})">Delete</button></td>
+        <td><button type="button" class="btn btn-outline-primary" onclick="showEditFormStudent(${students[i].id})" data-bs-toggle="modal" data-bs-target="#myModal1">Update</button></td>
         </tr>`
             }
             $(`#list-student`).html(content);
 
-            let iconPage = `<button id="first" ><i class="fa-solid fa-backward-fast">First</i></button> 
+            let iconPage = `<button id="first" ><i class="fa-solid fa-backward-fast"><span aria-hidden="true">&laquo;</span></i></button> 
                 <button  id="backup" onclick="findByName(${data.pageable.pageNumber} - 1)"><i class ="fa-solid fa-backward-step">Back</i></button>
                       <span> Trang </span> <span>${data.pageable.pageNumber +1 }/ ${data.totalPages}</span>
                       <button id="next" onclick="findByName(${data.pageable.pageNumber}+1)" ><i class="fa-solid fa-forward-step">Next</i></button>
-                        <button id="last" onclick="findByName(${data.totalPages} -1)"><i class="fa-solid fa-forward-fast">Last</i></button>`
+                        <button id="last" onclick="findByName(${data.totalPages} -1)"><i class="fa-solid fa-forward-fast"><span aria-hidden="true">&raquo;</span></i></button>`
             $(`#iconPage`).html(iconPage);
             if (data.pageable.pageNumber === 0) {
                 document.getElementById("backup").hidden = true
@@ -328,7 +330,7 @@ function showEditFormStudent(id){
                             <div>
                                 <label>Học phí:</label>
                                 
-                                <select name="u-tuition" id="u-tuition"> </select>
+                                <select name="u-tuition" id="u-tuition"></select>
                            
                             </div>
                         </tr>
@@ -363,7 +365,7 @@ function showEditFormStudent(id){
             $('#u-dateOfBirth').val(student.dateOfBirth)
             $('#u-address').val(student.address)
             $('#u-classes').val(student.classes.name)
-            $('#u-tuition').val(student.tuition.namespaceURI)
+            $('#u-tuition').val(student.tuition.name)
             $('#u-statusStudent').val(student.statusStudent.name)
         }
     })

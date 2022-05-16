@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Student</title>
+    <title>Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
           content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
@@ -189,105 +189,24 @@
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add New Student</button>
-
-                    <!-- The Modal-->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add New Student</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-
-                                <!--Modal Body-->
-                                <div class="modal-body" id="showModal">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="code" class="form-label">Code</label>
-                                            <input type="text" class="form-control" id="code" >
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="fullName" class="form-label">Full name</label>
-                                            <input type="text" class="form-control" id="fullName" >
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="phoneNumber" class="form-label">Phone number</label>
-                                            <input type="text" class="form-control" id="phoneNumber" >
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="avatar" class="form-label">Avatar</label>
-
-                                            <input type="file" class="form-control" id="avatar">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="gender" class="form-label">Gender</label>
-                                            <select name="gender" id="gender"></select>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="dateOfBirth" class="form-label">Date of Birth</label>
-                                            <input type="date" class="form-control" id="dateOfBirth">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="address" class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="address">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="classes" class="form-label">Class</label>
-                                            <select name="classes" id="classes"></select>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="tuition" class="form-label">Học phí</label>
-                                            <select name="tuition" id="tuition"></select>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="statusStudent" class="form-label">Trạng thái</label>
-                                            <select name="statusStudent" id="statusStudent"></select>
-                                        </div>
-
-                                    </form>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary" onclick="createStudent()">Create</button>
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!--    close-->
+                    <button type="button" class="btn btn-primary">Profile</button>
 
 
                     <!--    </div>-->
 
-                    <div class="modal" id="myModal1">
+                    <!--The modal-->
+
+                    <div class="modal" id="showViewStudent">
                         <div class="modal-dialog">
                             <div class="modal-content">
 
-
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Edit Student</h4>
+                                    <h4 class="modal-title">View</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
 
                                 <!-- Modal body -->
-                                <div class="modal-body" id="showModalEdit">
+                                <div class="modal-body" id="showProfile">
 
                                 </div>
 
@@ -296,6 +215,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--Close-->
 
 
                 </div>
@@ -325,29 +246,24 @@
             <div class="row">
                 <div class="col-md-12" style="text-align: center">
                     <div class="white-box">
-                        <h3 class="box-title">Student List</h3>
+                        <h3 class="box-title">Profile</h3>
                         <p class="text-muted">CaseStudy<code>.group 3</code></p>
                         <div class="table-responsive">
+
                             <table class="table text-nowrap table-bordered border-primary table-hover">
                                 <thead>
                                 <tr class="table-secondary">
                                     <th scope="col">#</th>
                                     <th scope="col">Code</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Phone number</th>
                                     <th scope="col">Avatar</th>
+                                    <th scope="col">Phone number</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Gender</th>
-                                    <th scope="col">Date of Birth</th>
                                     <th scope="col">Address</th>
-                                    <th scope="col">Class</th>
-                                    <th scope="col">Học phí</th>
-                                    <th scope="col">Trạng thái</th>
-                                    <th scope="col" colspan="2">Action</th>
-
+                                    <th scope="col">View</th>
                                 </tr>
                                 </thead>
-                                <tbody id="list-student">
+                                <tbody id="role-student">
                             </table>
 
                             <!--    Icon page-->
@@ -392,8 +308,9 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 
+
 </body>
-<script src="student.js"></script>
+<script src="roleStudent.js"></script>
 <script src="../../template/plugins/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="../../template/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
