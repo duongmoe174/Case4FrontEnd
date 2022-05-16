@@ -79,6 +79,21 @@ function showGender(){
     })
 }
 
+function showRoleSet(){
+    $.ajax({
+        type:"GET",
+        url:"http://localhost:8080/ministry/rolesets",
+        success: function (rolesets){
+            let content = ``;
+            for (let i = 0; i < rolesets.length; i++) {
+                content +=`<option value="${rolesets[i].id}">${rolesets[i].name}</option>`
+            }
+            $("#roleSet").html(content);
+            // $("#newGender").html(content);
+        }
+    })
+}
+
 function createMinistry(){
     let userName = $('#userName').val();
     let password = $('#password').val();
@@ -115,7 +130,7 @@ function createMinistry(){
     });
     event.preventDefault();
 }
-
+showRoleSet();
 
 //----------FIND BY NAME OF MINISTRY--------------
 
