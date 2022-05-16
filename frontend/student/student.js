@@ -75,7 +75,7 @@ function showClass(){
         type:"GET",
         url:"http://localhost:8080/students/classes",
         success: function (classes){
-            let content = `<option disabled>...Choose...</option>`;
+            let content = `<option selected>...Choose...</option>`;
             for (let i = 0; i < classes.length; i++) {
                 content +=`<option value="${classes[i].id}">${classes[i].name}</option>`
             }
@@ -91,7 +91,7 @@ function showGender(){
         type:"GET",
         url:"http://localhost:8080/students/genders",
         success: function (genders){
-            let content = `<option disabled>...Choose...</option>`;
+            let content = `<option selected>...Choose...</option>`;
             for (let i = 0; i < genders.length; i++) {
                 content +=`<option value="${genders[i].id}">${genders[i].name}</option>`
             }
@@ -106,7 +106,7 @@ function showTuition(){
         type:"GET",
         url:"http://localhost:8080/students/tuitions",
         success: function (tuitions){
-            let content = `<option disabled>Choose...</option>`;
+            let content = `<option selected>Choose...</option>`;
             for (let i = 0; i < tuitions.length; i++) {
                 content +=`<option value="${tuitions[i].id}">${tuitions[i].name}</option>`
             }
@@ -121,7 +121,7 @@ function showStatus(){
         type:"GET",
         url:"http://localhost:8080/students/status",
         success: function (statuses){
-            let content = `<option disabled>Choose...</option>`;
+            let content = `<option selected>Choose...</option>`;
             for (let i = 0; i < statuses.length; i++) {
                 content +=`<option value="${statuses[i].id}">${statuses[i].name}</option>`
             }
@@ -178,7 +178,7 @@ function findByName(page){
     let q = $("#q").val();
     $.ajax({
         type : 'GET',
-        url : `http://localhost:8080/students?q=${q}&page=${page}`,
+        url : `http://localhost:8080/students/list?q=${q}&page=${page}`,
         success: function (data) {
             let students = data.content;
             let content = '';
