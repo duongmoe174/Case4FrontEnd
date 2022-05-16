@@ -19,6 +19,15 @@ function login(){
         success: function (data){
             if (password === re_password) {
                 localStorage.setItem("data", JSON.stringify(data));
+                let userStorage =  localStorage.getItem("data");
+                let userJSON = JSON.parse(userStorage);
+                let role = userJSON.roleSet[0].authority;
+                switch (role) {
+                    case "ROLE_ADMIN": window.location.href = "../admin/index.html"
+                }
+
+
+
                 window.location.href = "../admin/index.html"
             } else {
                 $("#message").html("password not match!")
