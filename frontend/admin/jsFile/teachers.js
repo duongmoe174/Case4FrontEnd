@@ -113,7 +113,6 @@ function showCreateForm() {
 }
 
 function createTeacher() {
-    event.preventDefault();
     let username = $("#createUsernameTC").val();
     let password = $("#createPasswordTC").val();
     let roleSet = $("#createRoleSetTC").val();
@@ -160,7 +159,7 @@ function createTeacher() {
 
 function showFormEditTeacher(id) {
     let footer = `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="editTeacher(${id})">Save</button>`;
+                    <input type="submit" class="btn btn-primary" onclick="editTeacher(${id})">Save</input>`;
     $("#edit_footerTeacher").html(footer);
     $.ajax({
         type: "GET",
@@ -236,3 +235,61 @@ function deleteTeacher(element) {
         window.location.href = "../admin/teachers.html";
     }
 }
+
+function validatePassword() {
+    let myInput = document.getElementById("createPasswordTC");
+    let letter = document.getElementById("letter");
+    let capital = document.getElementById("capital");
+    let number = document.getElementById("number");
+    let length = document.getElementById("length");
+
+    myInput.onfocus = function () {
+        document.getElementById("messageTC").style.display = "block";
+    }
+
+    myInput.onblur = function () {
+        document.getElementById("messageTC").style.display = "none";
+    }
+
+    myInput.onkeyup = function () {
+        // Validate lowercase letters
+        let lowerCaseLetters = /[a-z]/g;
+        if(myInput.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+        } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+        }
+
+        // Validate capital letters
+        let upperCaseLetters = /[A-Z]/g;
+        if(myInput.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+        } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+        }
+
+        // Validate numbers
+        let numbers = /[0-9]/g;
+        if(myInput.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+        } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+        }
+
+        // Validate length
+        if(myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+        } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+        }
+    }
+}
+validatePassword();

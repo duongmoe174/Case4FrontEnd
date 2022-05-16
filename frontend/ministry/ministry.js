@@ -2,8 +2,8 @@ function showListMinistry(page){
     $.ajax({
         type:"GET",
         url:`http://localhost:8080/ministry/ministries?page=${page}`,
-        success: function (ministry){
-            // let ministry = data.content;
+        success: function (data){
+            let ministry = data.content;
             let content = '';
             for (let i = 0; i < ministry.length; i++){
                 content += `<tr>
@@ -23,25 +23,25 @@ function showListMinistry(page){
             $("#list-ministry").html(content);
 
             let iconPage =  `<button id="first" onclick="showListMinistry(0)"><i class="fa-solid fa-backward-fast">First</i></button> 
-                <button  id="backup" onclick="showListMinistry(${ministry.pageable.pageNumber} - 1)"><i class ="fa-solid fa-backward-step">Back</i></button>
-                      <span> Trang </span> <span>${ministry.pageable.pageNumber +1 }/ ${ministry.totalPages}</span>
-                      <button id="next" onclick="showListMinistry(${ministry.pageable.pageNumber}+1)" ><i class="fa-solid fa-forward-step">Next</i></button>
-                        <button id="last" onclick="showListMinistry(${ministry.totalPages} -1)"><i class="fa-solid fa-forward-fast">Last</i></button>`
+                <button  id="backup" onclick="showListMinistry(${data.pageable.pageNumber} - 1)"><i class ="fa-solid fa-backward-step">Previous</i></button>
+                      <span> Page </span> <span>${data.pageable.pageNumber +1 }/ ${data.totalPages}</span>
+                      <button id="next" onclick="showListMinistry(${data.pageable.pageNumber}+1)" ><i class="fa-solid fa-forward-step">Next</i></button>
+                        <button id="last" onclick="showListMinistry(${data.totalPages} -1)"><i class="fa-solid fa-forward-fast">Last</i></button>`
             $(`#iconPage`).html(iconPage);
-            if (ministry.pageable.pageNumber === 0) {
+            if (data.pageable.pageNumber === 0) {
                 document.getElementById("backup").hidden = true
                 document.getElementById("first").hidden = true
 
             }
 
-            if (ministry.totalPages ===0 ) {
+            if (data.totalPages ===0 ) {
                 document.getElementById("backup").hidden = true
                 document.getElementById("first").hidden = true
                 document.getElementById("next").hidden = true
                 document.getElementById("last").hidden = true
             }
 
-            if (ministry.pageable.pageNumber + 1 === data.totalPages) {
+            if (data.pageable.pageNumber + 1 === data.totalPages) {
                 document.getElementById("next").hidden = true
                 document.getElementById("last").hidden = true
             }
@@ -75,6 +75,21 @@ function showGender(){
             }
             $("#gender").html(content);
             $("#newGender").html(content);
+        }
+    })
+}
+
+function showRoleSet(){
+    $.ajax({
+        type:"GET",
+        url:"http://localhost:8080/ministry/rolesets",
+        success: function (rolesets){
+            let content = ``;
+            for (let i = 0; i < rolesets.length; i++) {
+                content +=`<option value="${rolesets[i].id}">${rolesets[i].name}</option>`
+            }
+            $("#roleSet").html(content);
+            // $("#newGender").html(content);
         }
     })
 }
@@ -115,7 +130,7 @@ function createMinistry(){
     });
     event.preventDefault();
 }
-
+showRoleSet();
 
 //----------FIND BY NAME OF MINISTRY--------------
 

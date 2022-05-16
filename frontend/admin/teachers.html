@@ -192,6 +192,7 @@
                     <button class="button-29" role="button" data-bs-toggle="modal" data-bs-target="#create_modalTeacher" onclick="showCreateForm()">Create teacher</button>
                 </div>
                 <!--CREATE MODAL-->
+                <form action="#">
                 <div>
                     <div class="modal fade" id="create_modalTeacher" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -211,8 +212,15 @@
                                     <div class="modal-body">
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input class="form-control" id="createPasswordTC"
-                                                   type="text">
+                                            <input class="form-control customValidate" id="createPasswordTC"
+                                                   type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+                                            <div id="messageTC">
+                                                <h3>Password must contain the following:</h3>
+                                                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                                <p id="number" class="invalid">A <b>number</b></p>
+                                                <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-body">
@@ -286,6 +294,7 @@
                         </div>
                     </div>
                 </div>
+                </form>
                 <!--END CREATE MODAL-->
                 <!--START EDIT MODAL-->
                 <div>
