@@ -22,3 +22,13 @@ function login(){
         }
     })
 }
+
+function checkConfirmPassword () {
+    let password = $("#password").val();
+    let confirmPassword = $("#confirmPassword").val();
+    if (password===confirmPassword) {
+        $("#resultPassword").html("<span style='color: green'>Matched!</span>")
+    } else {
+        $("#resultPassword").html("<span style='color: red'>Matched!</span>")
+    }
+}

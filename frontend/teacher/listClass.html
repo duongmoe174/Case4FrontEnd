@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin</title>
+    <title>Teacher</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
           content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
@@ -18,7 +18,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <link href="../../template/css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../template/mycustomcss/myCss.css">
-
 </head>
 <body>
 <!-- ============================================================== -->
@@ -86,9 +85,9 @@
                     <!-- ============================================================== -->
                     <li class=" in">
                         <form role="search" class="app-search d-none d-md-block me-3">
-                            <input type="text" placeholder="Search..." class="form-control mt-0">
+                            <input id="q" type="text" placeholder="Search..." class="form-control mt-0">
                             <a href="" class="active">
-                                <i class="fa fa-search"></i>
+                                <i class="fa fa-search" onclick=""></i>
                             </a>
                         </form>
                     </li>
@@ -135,38 +134,24 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="teachers.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="listStudent.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="hide-menu">Teacher management</span>
+                            <span class="hide-menu">Student</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="listClass.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="hide-menu">Student management</span>
+                            <span class="hide-menu">Class</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="diary.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="hide-menu">Ministry management</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="class.html"
-                           aria-expanded="false">
-                            <i class="fas fa-university" aria-hidden="true"></i>
-                            <span class="hide-menu">Class management</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
-                           aria-expanded="false">
-                            <i class="fas fa-book" aria-hidden="true"></i>
-                            <span class="hide-menu">Subject management</span>
+                            <span class="hide-menu">Diary</span>
                         </a>
                     </li>
                 </ul>
@@ -186,10 +171,11 @@
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
+
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Create User</h4>
+                    <h4 class="page-title">Table Teacher</h4>
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <div class="d-md-flex">
@@ -204,6 +190,7 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -215,25 +202,35 @@
             <!-- Start Page Content -->
             <!-- ============================================================== -->
             <div class="row">
-                <div class="col-md-12" style="text-align: center">
-                    <div>
-                        <a href="teachers.html"><button class="button-85" role="button">Teacher management</button></a>
-                    </div>
-                    <br>
-                    <div>
-                        <button class="button-85" role="button">Student management</button>
-                    </div>
-                    <br>
-                    <div>
-                        <button class="button-85" role="button">Ministry management</button>
-                    </div>
-                    <br>
-                    <div>
-                        <a href="class.html"><button class="button-85" role="button">Class management</button></a>
-                    </div>
-                    <br>
-                    <div>
-                        <button class="button-85" role="button">Subject management</button>
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title">List Class Of Teacher</h3>
+
+                        <div class="form-floating">
+                            <select class="form-select" aria-label="Floating label select example" id="getTeacher" onchange="getListClassByTeacherId()">
+                                <option selected disabled>Name of Teacher...</option>
+                            </select>
+                            <!--                                <label for="floatingSelect">Select with name teacher</label>-->
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table text-nowrap" id="listClass">
+                                <thead>
+                                <tr>
+                                    <th class="border-top-0">#</th>
+                                    <th class="border-top-0">Teacher</th>
+                                    <th class="border-top-0">Class</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Deshmukh</td>
+                                    <td>Prohaska</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,9 +269,8 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 
-
 </body>
-<script src="jsFile/admin.js"></script>
+<script src="student.js"></script>
 <script src="../../template/plugins/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="../../template/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -285,4 +281,6 @@
 <script src="../../template/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
 <script src="../../template/js/custom.js"></script>
+
+<script src="js/listClass.js"></script>
 </html>
