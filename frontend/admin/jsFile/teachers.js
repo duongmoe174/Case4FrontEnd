@@ -233,6 +233,6 @@ function deleteTeacher(element) {
             }
         })
     } else {
-        window.location.href = "../admin/teacher.html";
+        window.location.href = "../admin/teachers.html";
     }
 }
