@@ -106,7 +106,7 @@ function showTuition(){
         type:"GET",
         url:"http://localhost:8080/students/tuitions",
         success: function (tuitions){
-            let content = `<option selected>Choose...</option>`;
+            let content = `<option selected>...Choose...</option>`;
             for (let i = 0; i < tuitions.length; i++) {
                 content +=`<option value="${tuitions[i].id}">${tuitions[i].name}</option>`
             }
@@ -121,7 +121,7 @@ function showStatus(){
         type:"GET",
         url:"http://localhost:8080/students/status",
         success: function (statuses){
-            let content = `<option selected>Choose...</option>`;
+            let content = `<option selected>...Choose...</option>`;
             for (let i = 0; i < statuses.length; i++) {
                 content +=`<option value="${statuses[i].id}">${statuses[i].name}</option>`
             }
