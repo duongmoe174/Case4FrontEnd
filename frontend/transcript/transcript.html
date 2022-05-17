@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin</title>
+    <title>Transcript</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
           content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
@@ -86,9 +86,9 @@
                     <!-- ============================================================== -->
                     <li class=" in">
                         <form role="search" class="app-search d-none d-md-block me-3">
-                            <input type="text" placeholder="Search..." class="form-control mt-0">
+                            <input id="q" type="text" placeholder="Search..." class="form-control mt-0">
                             <a href="" class="active">
-                                <i class="fa fa-search"></i>
+                                <i class="fa fa-search" onclick="findByName(0)"></i>
                             </a>
                         </form>
                     </li>
@@ -128,42 +128,42 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="hide-menu">Profile</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="teachers.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="hide-menu">Teacher management</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../student/student.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="hide-menu">Student management</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../ministry/ministry.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="hide-menu">Ministry management</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="class.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
                            aria-expanded="false">
                             <i class="fas fa-university" aria-hidden="true"></i>
                             <span class="hide-menu">Class management</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="subject.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="../../../Downloads/ample-admin-lite-master/profile.html"
                            aria-expanded="false">
                             <i class="fas fa-book" aria-hidden="true"></i>
                             <span class="hide-menu">Subject management</span>
@@ -189,7 +189,83 @@
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Create User</h4>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add New Student</button>
+
+                    <!-- The Modal-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add New Transcript</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <!--Modal Body-->
+                                <div class="modal-body" id="showModal">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="point1" class="form-label">Diem Li Thuyet</label>
+                                            <input type="text" class="form-control" id="point1" >
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="point2" class="form-label">Diem Thuc Hanh</label>
+                                            <input type="text" class="form-control" id="point2" >
+                                        </div>
+                                        <tr>
+                                            <div class="mb-3">
+                                                <label >Mon Hoc</label>
+                                                <select name="subject" id="subject"></select>
+                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <div class="mb-3">
+                                                <label >Ten Hoc Sinh</label>
+                                                <select name="student" id="student"></select>
+                                            </div>
+                                        </tr>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" onclick="createTranscript()">Create</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--    close-->
+
+
+                    <!--    </div>-->
+
+                    <div class="modal" id="myModal1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Edit Transcript</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body" id="showModalEdit">
+
+                                </div>
+
+                                <!-- Modal footer -->
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <div class="d-md-flex">
@@ -216,24 +292,33 @@
             <!-- ============================================================== -->
             <div class="row">
                 <div class="col-md-12" style="text-align: center">
-                    <div>
-                        <a href="teachers.html"><button class="button-85" role="button">Teacher management</button></a>
-                    </div>
-                    <br>
-                    <div>
-                        <button class="button-85" role="button">Student management</button>
-                    </div>
-                    <br>
-                    <div>
-                        <button class="button-85" role="button">Ministry management</button>
-                    </div>
-                    <br>
-                    <div>
-                        <a href="class.html"><button class="button-85" role="button">Class management</button></a>
-                    </div>
-                    <br>
-                    <div>
-                        <button class="button-85" role="button">Subject management</button>
+                    <div class="white-box">
+                        <h3 class="box-title">Transcript List</h3>
+                        <p class="text-muted">CaseStudy<code>.group 3</code></p>
+                        <div class="table-responsive">
+                            <table class="table text-nowrap table-bordered border-primary table-hover">
+                                <thead>
+                                <tr class="table-secondary">
+                                    <th scope="col">#</th>
+                                    <th scope="col">Diem li thuyet</th>
+                                    <th scope="col">Diem Thuc Hanh</th>
+                                    <th scope="col">Diem Trung Binh</th>
+                                    <th scope="col">Xep Hang Diem</th>
+                                    <th scope="col">Mon Hoc</th>
+                                    <th scope="col">Ten Hoc Sinh</th>
+                                    <th scope="col">Xoa</th>
+                                    <th scope="col">Chinh Sua</th>
+
+
+                                </tr>
+                                </thead>
+                                <tbody id="list-transcript">
+                            </table>
+
+                            <!--    Icon page-->
+                            <div id="iconPage"></div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,9 +357,8 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 
-
 </body>
-<script src="jsFile/admin.js"></script>
+<script src="transcript.js"></script>
 <script src="../../template/plugins/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="../../template/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
