@@ -68,7 +68,7 @@
             <!-- ============================================================== -->
             <!-- End Logo -->
             <!-- ============================================================== -->
-            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+            <div class="navbar-collapse collapse" data-navbarbg="skin5">
                 <ul class="navbar-nav d-none d-md-block d-lg-none">
                     <li class="nav-item">
                         <a class="nav-toggler nav-link waves-effect waves-light text-white"
@@ -134,24 +134,17 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="listStudent.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="student.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="hide-menu">Student</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="listClass.html"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="class.html"
                            aria-expanded="false">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span class="hide-menu">Class</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="diary.html"
-                           aria-expanded="false">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="hide-menu">Diary</span>
                         </a>
                     </li>
                 </ul>
@@ -175,7 +168,7 @@
         <div class="page-breadcrumb bg-white">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Table Teacher</h4>
+                    <h4 class="page-title">Diary Class</h4>
                 </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <div class="d-md-flex">
@@ -201,49 +194,41 @@
             <!-- ============================================================== -->
             <!-- Start Page Content -->
             <!-- ============================================================== -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="white-box">
-                        <h3 class="box-title">List Student Of Teacher</h3>
 
-                        <div class="form-floating">
-                            <select class="form-select" aria-label="Floating label select example" id="getTeacher" onchange="getListStudentByTeacherId()">
-                                <option selected disabled>Name of Teacher...</option>
-                            </select>
-                            <!--                                <label for="floatingSelect">Select with name teacher</label>-->
-                        </div>
-
-                        <div class="table-responsive">
-                            <table class="table text-nowrap" id="listStudent">
-                                <thead>
-                                <tr>
-                                    <th class="border-top-0">#</th>
-                                    <th class="border-top-0">Full Name</th>
-                                    <th class="border-top-0">Gender</th>
-                                    <th class="border-top-0">Email</th>
-                                    <th class="border-top-0">Date Of Birth</th>
-                                    <th class="border-top-0">Phone Number</th>
-                                    <th class="border-top-0">Avatar</th>
-                                    <th class="border-top-0">Status</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Deshmukh</td>
-                                    <td>Prohaska</td>
-                                    <td>@Genelia</td>
-                                    <td>admin</td>
-                                    <td>admin</td>
-                                    <td>admin</td>
-                                    <td>admin</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Diary</label>
             </div>
+            <div class="mb-3">
+                <label class="form-label">Name Teacher</label>
+                <input type="text" class="form-control" disabled>
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg">Create</button>
+            <br>
+            <br>
+            <div class="container">
+                <form>
+                    <fieldset disabled>
+                        <legend>Diary 1</legend>
+                        <div class="mb-3">
+                            <label for="disabledTextInput" class="form-label">Name Teacher</label>
+                            <input type="text" id="disabledTextInput" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="disabledTextInput2" class="form-label">Date Writing</label>
+                            <input type="text" id="disabledTextInput2" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="disabledTextInput3" class="form-label">Content</label>
+                            <input type="text" id="disabledTextInput3" class="form-control">
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+
+
             <!-- ============================================================== -->
             <!-- End PAge Content -->
             <!-- ============================================================== -->
@@ -292,5 +277,5 @@
 <!--Custom JavaScript -->
 <script src="../../template/js/custom.js"></script>
 
-<script src="js/listStudent.js"></script>
+<script src="js/diaryClass.js"></script>
 </html>
