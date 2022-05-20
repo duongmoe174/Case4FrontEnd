@@ -21,12 +21,16 @@ function showListClass() {
                                         <th class="border-top-0">#</th>
                                         <th class="border-top-0">Teacher</th>
                                         <th class="border-top-0">Class</th>
+                                        <th class="border-top-0">Action</th>
                                     </tr>`;
             for (let i = 0; i < students.length; i++) {
                 content += `<tr>
                                             <td>${students[i].id}</td>
                                             <td>${students[i].nameTeacher}</td>
                                             <td>${students[i].nameClass}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" href="" onclick="">Diary</button>     
+                                            </td>
                                         </tr>`;
             }
             $("#listClass").html(content);
@@ -44,12 +48,16 @@ function getListClassByTeacherId() {
                                             <th class="border-top-0">#</th>
                                             <th class="border-top-0">Teacher</th>
                                             <th class="border-top-0">Class</th>
+                                            <th class="border-top-0">Action</th>
                                         </tr>`;
             for (let i = 0; i < students.length; i++) {
                 content += `<tr>
                                             <td>${students[i].id}</td>
                                             <td>${students[i].nameTeacher}</td>
                                             <td>${students[i].nameClass}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="">Diary</button>     
+                                            </td>
                                         </tr>`;
             }
             $("#listClass").html(content);
